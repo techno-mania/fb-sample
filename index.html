@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Facebook - Log In or Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="public/css/style.css">
+	<link rel="icon" href="public/images/favc.png" type="image/png" sizes="16x16">
+
+</head>
+<body onload="myFunction()">
+	<div id="wrapper">
+		<div class="div1">
+			<div class="logo">
+				<a href="#">
+					<img class="logo-img" src="public/images/logo.gif " >
+				</a>
+			</div>
+			<div class="login">
+				<form action="login.php" onsubmit="return validLogin(loginEmail,logPwd)" method="post">
+
+
+					<table class="login-table">
+						<tr>
+							<td class="login-text">Email or Phone</td>
+							<td class="login-text1 "><p class="marg">Password</p></td>
+						</tr>
+						<tr>
+							
+							<td ><input type="email" name="email" id="logineml" class="login-input"></td>
+							<td ><input type="password" name="pwd" id="logpwd" class="login-input marg"></td>
+							<td><button name="btn" class="btn-login">Log In</button></td>
+						</tr>
+						<tr>
+						<td></td>	
+							<td colspan="2" ><a href="#" class="forg marg">Forgotten account?</a></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+		<div class="div2">
+			<div class="left">
+				<div class="left-content">
+					<div class="left-text">
+						<h3 class="left-heading">Facebook helps you connect and share with the people in your life.</h3>
+					</div>
+				<img src="public/images/connect-img.png" class="left-img">
+				</div>	
+			</div>
+			<div class="right">
+				<div id="right-main-heading">
+					<h2>Create an account</h2>
+					<p>It's free and always will be.</p>
+				</div>
+				<div id="form1">
+					<form action="sign_up.php" method="post" onsubmit="return validSignup(fname,lname,emlname,cename,spwd)">
+						<table class="signup-form">
+							<tr>
+								<td><span id="fnError">What is your name?<span class="arrow">&#9654;</span></span><input class="common small" id="input1" type="text" name="fname" placeholder= " First name"></td>
+								<td><input class="common small" id="input2"  type="text" name="lname" placeholder= " Surname"></td>
+							</tr>
+							<tr>
+								<td colspan="3"><input class="common1" id="input3" type="text" name="email" placeholder= " Mobile number or email address" ></td>
+							</tr>
+							<tr>
+								<td colspan="2"><input class="common1" id="input4" type="text" name="cemail" placeholder= " Re-enter email or mobile number"></td>
+							</tr>
+							<tr>
+								<td colspan="2"><input class="common1" id="input5" type="password" name="pwd" placeholder= " New password"></td>
+							</tr>
+						</table>
+						<br>
+
+						<label for="" id="bday">Birthday</label>
+						<br>
+							<select name="day" id="day">
+							<option value="">Day</option>
+
+							<?php
+							$arr =array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31);
+							for($i=0; $i<count($arr);$i++){
+								echo '<option value = "'.$arr[$i].'">'.$arr[$i].'</option>';
+							}
+							?>
+						</select>
+						<select name="month" id="month">
+							<option value="">Month</option>
+							<?php
+								$arr=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+								for($i=0; $i<count($arr);$i++){
+								echo '<option value = "'.$arr[$i].'">'.$arr[$i].'</option>';
+								}
+							?>
+						</select>
+						
+						<select name="year" id="year">
+							<option value="">Year</option>
+							<?php
+								for($i=date("Y"); $i> 1900;$i--){
+								echo '<option value = "'.$i.'">'.$i.'</option>';
+								}
+							?>
+						</select>
+						<div class="reason-date">
+							<a href="#" class="link-reason-date">Why do I need to provide my<br> date of birth?</a>
+						</div>
+						
+						
+						
+						<br>
+						<div class="radio">
+							<input class="gender" type="radio" name="gender" value="female"> Female
+							<input class="gender g1" type="radio" name="gender" value="male"> Male
+						</div>
+						
+						<br>
+						
+						<div class="privacy-text">
+							<p >
+							By clicking Create an account, you agree to our <a href="#" class="link-privacy-text"> Terms </a> and confirm that you have read our <a href="#" class="link-privacy-text">Data Policy</a>, including our <a href="#" class="link-privacy-text">Cookie</a>Facebook and can opt out at any time.
+						</p>
+						</div>
+						
+
+						<button id="btn1" name="btn">Create an account</button>
+						<button name="btn" class="btn-login btn-login-responsive">Log In</button>
+
+					</form>
+					<div id="cpage">
+						<p><a href="#" class="link-cpage">Create a Page</a> for a celebrity, band or business.</p>
+					</div>	
+				</div>	
+			</div>
+		</div>
+		<div class="div3">
+			
+			<div class="footer1">
+				<div class="footer1-text">
+					<p>English (UK) <a href="#">العربية</a>   <a href="#">پښتو</a> <a href="#"> اردو</a> <a href="#">हिन्दी</a><a href="#">বাংলা</a> <a href="#">فارسی</a><a href="#">ગુજરાતી</a><a href="#">Deutsch</a><a href="#" id="footer1-lastlink">Español</a>
+					</p>
+					<button>&#43;</button>
+				</div>
+				
+			</div>
+			<div class="footer2">
+				<div class="footer2-links">
+					<ul class="footer2-ul">
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Sign Up</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Log In</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Messenger</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Facebook Lite</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Mobile</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Find Friends</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">People</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Pages</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Places</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Games</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Locations</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Celebrities</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Groups</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Moments</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Instagram</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">About</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Create Advert</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Create Page</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Developers</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Careers</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Privacy</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Cookies</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">AdChoices</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Terms</a>
+						</li>
+						<li class="footer2-li">
+							<a href="#" class="footer2-li-links">Help</a>
+						</li>
+					</ul>
+					
+				</div>
+				<div class="copy-right">
+					Facebook &#9400; 2017
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</div>
+<script type="text/javascript" src="public/js/jquery.js"></script>
+<script type="text/javascript" src="public/js/custom1.js"></script>	
+	
+</body>
+</html>
